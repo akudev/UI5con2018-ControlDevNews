@@ -1,0 +1,16 @@
+{
+  "name": "UI5con2018",
+  "version": "1.0.0",
+  "description": "News from Control Development",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "contributors": [
+	{"name": "Andreas Kunz"},
+	{"name": "Thomas Gauguin Houghton-Larsen"}
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
