@@ -1,6 +1,6 @@
 sap.ui.define(
-		['jquery.sap.global', 'sap/ui/core/XMLComposite'],
-		function (jQuery, XMLComposite) {
+		['sap/ui/core/XMLComposite'],
+		function (XMLComposite) {
 	"use strict";
 	
 	var HelloWorld = XMLComposite.extend("control.HelloWorld", {
