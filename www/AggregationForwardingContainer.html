@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Button Container Example - UI5con 2018 - Create Your Own UI5 Controls</title>
+
+		<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js" 
+			id="sap-ui-bootstrap"
+			data-sap-ui-libs="sap.m,sap.ui.layout" 
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-resourceroots='{"control": "./control"}'></script>
+
+	</head>
+	
+	<script>
+		jQuery.sap.require("control.ForwardingContainer");
+		
+		var oForwardingContainer = new control.ForwardingContainer({
+			content: [
+				new sap.m.Button({text: "Some text for the first Button"}),
+				new sap.m.Button({text: "A second button"}),
+				new sap.m.Input({value: "Third control"})
+			]
+		});
+		oForwardingContainer.placeAt("content");
+	</script>
+
+	<body id="content" role="application" class="sapUiBody sapUiResponsiveMargin">
+		<h1>UI5con 2018 - Create Your Own UI5 Controls – What’s Coming Up</h1>
+		<h3>Example 8: a container control which forwards its "content" aggregation into an internal Panel</h3>
+	</body>
+</html>

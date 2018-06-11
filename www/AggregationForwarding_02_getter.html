@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Aggregation Forwarding</title>
+
+		<script id='sap-ui-bootstrap'
+				src='https://openui5.hana.ondemand.com/resources/sap-ui-core.js'
+				data-sap-ui-theme='sap_belize'
+				data-sap-ui-libs="sap.m"></script> 
+
+		<script>
+
+			// PART 1: define the new Control
+
+			sap.ui.core.Control.extend("my.Container", {
+
+				// the control API:
+				metadata : {
+					aggregations : {
+						content: {
+							type: "sap.ui.core.Control",
+							multiple: true,
+							forwarding: {
+								getter: "getPanel",
+								aggregation: "content"
+							}
+						},
+						_panel: {type: "sap.m.Panel", multiple: false, visibility: "hidden"}
+					}
+				},
+
+				getPanel: function() {
+					var oPanel = this.getAggregation("_panel");
+					
+					if (!oPanel) {
+						var oPanel = new sap.m.Panel(this.getId() + "-panel", {
+							headerText: "Inner Panel",
+							expandable: true
+						});
+						this.setAggregation("_panel", oPanel);
+					}
+					
+					return oPanel;
+				},
+
+				// the part creating the HTML:
+				renderer : function(oRm, oControl) {
+					oRm.write("<div style='border: 1px solid red'"); 
+					oRm.writeControlData(oControl);
+					oRm.addClass("myContainer");
+					oRm.writeClasses();
+					oRm.write(">");
+					var oPanel = oControl.getAggregation("_panel");
+					oRm.renderControl(oPanel);
+					oRm.write("</div>");
+				}
+			});
+
+
+
+			// PART 2: instantiate Control and place it onto the page
+
+			var myControl = new my.Container({
+				content: [
+					new sap.m.Button({text: "Button passed in from outside"})
+				]
+			});
+
+			myControl.placeAt("content");
+
+		</script>
+
+	</head>
+	<body id='content' class='sapUiBody'>
+		<h1>UI5con 2018 - Create Your Own UI5 Controls – What’s Coming Up</h1>
+		<h3>Example 7: Aggregation Forwarding, with the target control referenced via getter function</h3>
+	</body>
+</html>

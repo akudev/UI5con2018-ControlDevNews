@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<Panel id="panel" headerText="This is a panel inside the ForwardingContainer control" expandable="true" backgroundDesign="Solid">
+		<!-- all controls given from the application into the "content" aggregation will be forwarded in here -->
+	</Panel>
+
+	</core:FragmentDefinition>
