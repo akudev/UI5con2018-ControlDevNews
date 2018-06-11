@@ -61,6 +61,7 @@
 			oHorizontalLayout.setModel(oManagedObjectModel, "listModel"); 
 			oHorizontalLayout.bindAggregation("content", { 
 				path: "listModel>/items", 
+				// notice that we know that each item has a title in our case
 				template: new sap.m.Button({text: "{listModel>title}"})
 			});
 				
@@ -72,7 +73,7 @@
 		
 	</head>
 	<body id="content" role="application" class="sapUiBody sapUiResponsiveMargin">
-		<h1>UI5con 2018 - Create Your Own UI5 Controls – What’s Coming Up</h1>
+		<h1>UI5con 2018 - Create Your Own UI5 Controls</h1>
 		<h3>Example 5: ManagedObjectModel, with aggregation binding</h3>
 	</body>
 </html>
