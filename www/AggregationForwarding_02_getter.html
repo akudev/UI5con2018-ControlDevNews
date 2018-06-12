@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Aggregation Forwarding</title>
+		<title>Aggregation Forwarding - UI5con 2018 - News from Control Development</title>
 
 		<script id='sap-ui-bootstrap'
 				src='https://openui5.hana.ondemand.com/resources/sap-ui-core.js'
@@ -47,7 +47,7 @@
 
 				// the part creating the HTML:
 				renderer : function(oRm, oControl) {
-					oRm.write("<div style='border: 1px solid red'"); 
+					oRm.write("<div style='border: 1px solid red; width: 600px;'"); 
 					oRm.writeControlData(oControl);
 					oRm.addClass("myContainer");
 					oRm.writeClasses();
@@ -73,8 +73,8 @@
 		</script>
 
 	</head>
-	<body id='content' class='sapUiBody'>
-		<h1>UI5con 2018 - Create Your Own UI5 Controls – What’s Coming Up</h1>
+	<body id='content' class='sapUiBody sapUiResponsiveMargin'>
+		<h1>UI5con 2018 - News from Control Development</h1>
 		<h3>Example 7: Aggregation Forwarding, with the target control referenced via getter function</h3>
 	</body>
 </html>
