@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Event Handler Parameters, basic - UI5con 2018 - News from Control Development</title>
+
+		<script id='sap-ui-bootstrap'
+				src='https://openui5.hana.ondemand.com/1.56.1/resources/sap-ui-core.js'
+				data-sap-ui-theme='sap_belize'
+				data-sap-ui-libs='sap.m'
+				data-sap-ui-xx-bindingSyntax='complex'></script>
+
+
+		<script id="myXml" type="text/xmldata">
+			<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="myController">
+			
+				<Button text="Click me" press= '.saySomething("Hello")'/>
+				
+			</mvc:View>
+		</script>
+		
+		<script>
+			sap.ui.controller("myController", {
+				onInit: function() {
+					var model = new sap.ui.model.json.JSONModel();
+					this.getView().setModel(model);
+					model.setData({                     // ---- model data ---
+						someProperty: "Some Model Data"
+					});
+				},
+				                                        // ---- event handler ---
+				saySomething: function(x) {         
+					alert(x);
+				}
+			});
+			sap.ui.xmlview({ viewContent: jQuery('#myXml').html() }).placeAt("content");
+		</script>
+
+	</head>
+	<body id='content' class='sapUiBody sapUiResponsiveMargin'>
+		<h1>UI5con 2018 - News from Control Development</h1>
+		<h3>Example 9: Event Handler Parameters, basic</h3>
+		To edit, go to <a href="https://jsbin.com/yifawij/1/edit?html,output">jsbin</a>.
+		<br>
+	</body>
+</html>

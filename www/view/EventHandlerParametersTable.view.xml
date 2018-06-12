@@ -5,7 +5,7 @@
 	displayBlock="true">
 
 	<App>
-		<Page title="Example 9: Event Handler Parameters in a Table">
+		<Page title="Example 10: Event Handler Parameters in a Table">
 			<t:Table
 				rows="{/Invoices}"
 				rowSelectionChange=".handleSelectionChange(${$parameters>rowContext})"
