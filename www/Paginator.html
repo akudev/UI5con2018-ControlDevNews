@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+
+		<title>Paginator Example - UI5con 2018 - News from Control Development</title>
+
+		<script src="https://openui5nightly.hana.ondemand.com/resources/sap-ui-core.js"
+			id="sap-ui-bootstrap"
+			data-sap-ui-libs="sap.m,sap.ui.layout" 
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-resourceroots='{"control": "./control"}'></script>
+
+	</head>
+	
+	<script>
+		sap.ui.require(["control/Paginator", "sap/m/MessageToast"],
+			function(Paginator, MessageToast) {
+		
+				var oPaginator = new Paginator({
+					change: function(oEvent) {
+						MessageToast.show("Now switching to page: " + oEvent.getParameter("page"));
+					}
+				});
+				oPaginator.placeAt("content");
+			
+		});
+		
+		
+	</script>
+
+	<body id="content" role="application" class="sapUiBody sapUiResponsiveMargin">
+		<h1>UI5con 2018 - News from Control Development</h1>
+		<h3>Example 11: a Paginator XMLComposite implemented using event handler parameters</h3>
+	</body>
+</html>
