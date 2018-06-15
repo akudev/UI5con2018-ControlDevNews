@@ -4,26 +4,22 @@
 	controllerName="controller.EventHandlerParametersTable" 
 	displayBlock="true">
 
-	<App>
-		<Page title="Example 10: Event Handler Parameters in a Table">
-			<t:Table
-				rows="{/Invoices}"
-				rowSelectionChange=".handleSelectionChange(${$parameters>rowContext})"
-				>
-				<t:columns>
-					<t:Column name="Product Name">
-						<t:template>
-							<Text text="{ProductName}" />
-						</t:template>
-					</t:Column>
-					<t:Column name="Product Name">
-						<t:template>
-							<Button text="Handle Item" press=".handleItem(${})"/>
-						</t:template>
-					</t:Column>
-				</t:columns>
-			</t:Table>
-		</Page>
-	</App>
+	<t:Table
+		rows="{/Invoices}"
+		rowSelectionChange=".handleSelectionChange(${$parameters>rowContext})"
+		>
+		<t:columns>
+			<t:Column name="Product Name">
+				<t:template>
+					<Text text="{ProductName}" />
+				</t:template>
+			</t:Column>
+			<t:Column name="Product Name">
+				<t:template>
+					<Button text="Handle Item" press=".handleItem(${})"/>
+				</t:template>
+			</t:Column>
+		</t:columns>
+	</t:Table>
 
 </mvc:View>
